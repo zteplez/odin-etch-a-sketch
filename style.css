@@ -7,13 +7,23 @@ body{
     display: flex;
     justify-content: center;
 }
-.container{
+.container>button{
+    margin: 4px 50%;
+    padding: 5px;
+    width: 100px;
+}
+.draw-grid{
     display: flex;
     flex-wrap: wrap;
-    width: 512px;
+    width: 768px;
+    height: 768px;
+    border: 1px solid red;
 }
 .grid-box{
     background-color: black;
-    width: 32px;
-    height: 32px;
+    width: 8px;
+    height: 8px;
+}
+.grid-box:hover{
+    background-color: #f4f4f4;
 }
