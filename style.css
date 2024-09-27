@@ -12,13 +12,13 @@ body{
     padding: 5px;
     width: 100px;
 }
-.draw-grid{
+.cell-grid{
     display: flex;
     flex-wrap: wrap;
     width: 960px;
     height: 960px;
 }
-.grid-box{
+.cell{
     border: 1px solid black;
     opacity: .1;
 }

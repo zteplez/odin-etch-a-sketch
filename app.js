@@ -1,5 +1,5 @@
 const changeSizeButton = document.querySelector("button");
-const drawGrid = document.querySelector(".container .draw-grid");
+const drawGrid = document.querySelector(".container .cell-grid");
 const gridDimension = 960;
 let cellSize = 16; // Default value.
 
@@ -7,16 +7,16 @@ function initGrid(){
     let boxSize = gridDimension / cellSize;
 
     for(let i = 0; i < cellSize * cellSize; i++){
-            let div = document.createElement("div");
-            div.classList.add("grid-box");
-            div.style.width = boxSize + "px";
-            div.style.height = boxSize + "px";
-            drawGrid.append(div);
+            let cell = document.createElement("div");
+            cell.classList.add("cell");
+            cell.style.width = boxSize + "px";
+            cell.style.height = boxSize + "px";
+            drawGrid.append(cell);
     }
     paintGrid();
 }
 function paintGrid(){
-    document.querySelectorAll(".grid-box").forEach(element => {
+    document.querySelectorAll(".cell").forEach(element => {
         element.addEventListener("mouseover", ()=> {
             let r = Math.floor(Math.random() * 256);
             let g = Math.floor(Math.random() * 256);
@@ -31,7 +31,7 @@ function paintGrid(){
     });
 }
 function clearGrid(){
-    let grids = document.querySelectorAll(".grid-box");  
+    let grids = document.querySelectorAll(".cell");  
     grids.forEach(element => {
         element.remove();
     });
