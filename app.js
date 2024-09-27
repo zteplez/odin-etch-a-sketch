@@ -23,8 +23,10 @@ function paintGrid(){
             let b = Math.floor(Math.random() * 256);
             let rgbStr = "rgb(" + r + "," + g + "," +  b + ")";
             element.style.backgroundColor = rgbStr;
-           // Get opacity attribute and increase %10
-            console.log( element.getAttribute());
+
+            // Increases opacity 1.25x every time.
+            let currentOpacity = window.getComputedStyle(element).opacity;
+            element.style.opacity = currentOpacity * 1.25;
         }); 
     });
 }
