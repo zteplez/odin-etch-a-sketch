@@ -15,15 +15,13 @@ body{
 .draw-grid{
     display: flex;
     flex-wrap: wrap;
-    width: 768px;
-    height: 768px;
-    border: 1px solid red;
+    width: 960px;
+    height: 960px;
 }
 .grid-box{
-    background-color: black;
-    width: 8px;
-    height: 8px;
+    border: 1px solid black;
 }
 .grid-box:hover{
     background-color: #f4f4f4;
 }
+
