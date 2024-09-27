@@ -1,18 +1,32 @@
 const changeSizeButton = document.querySelector("button");
 const drawGrid = document.querySelector(".container .draw-grid");
 const gridDimension = 960;
-let gridSize = 16; // Default value.
+let cellSize = 16; // Default value.
 
 function initGrid(){
-    let boxSize = gridDimension / gridSize;
+    let boxSize = gridDimension / cellSize;
 
-    for(let i = 0; i < gridSize * gridSize; i++){
+    for(let i = 0; i < cellSize * cellSize; i++){
             let div = document.createElement("div");
             div.classList.add("grid-box");
             div.style.width = boxSize + "px";
             div.style.height = boxSize + "px";
-            document.querySelector(".draw-grid").append(div);
+            drawGrid.append(div);
     }
+    paintGrid();
+}
+function paintGrid(){
+    document.querySelectorAll(".grid-box").forEach(element => {
+        element.addEventListener("mouseover", ()=> {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            let rgbStr = "rgb(" + r + "," + g + "," +  b + ")";
+            element.style.backgroundColor = rgbStr;
+           // Get opacity attribute and increase %10
+            console.log( element.getAttribute());
+        }); 
+    });
 }
 function clearGrid(){
     let grids = document.querySelectorAll(".grid-box");  
@@ -22,8 +36,8 @@ function clearGrid(){
 }
 
 changeSizeButton.addEventListener('click', () => {
-    gridSize = prompt("Enter new size (Max:100)");
-    if(gridSize > 80 || gridSize < 16){
+    cellSize = prompt("Enter new size (Max:100)");
+    if(cellSize > 80 || cellSize < 16){
         alert("Invalid number!");
         return;
     }
@@ -32,3 +46,5 @@ changeSizeButton.addEventListener('click', () => {
 });
 
 initGrid();
+
+

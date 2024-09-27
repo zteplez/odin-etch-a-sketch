@@ -20,8 +20,7 @@ body{
 }
 .grid-box{
     border: 1px solid black;
+    opacity: .5;
 }
-.grid-box:hover{
-    background-color: #f4f4f4;
-}
+
 
